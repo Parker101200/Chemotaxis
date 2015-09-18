@@ -1,9 +1,7 @@
  Bacteria [] colony;
- Food cheese; //declare bacteria variables here   
  void setup()   
  {     
  	size(400,400);
- 	cheese = new Food(mouseX, mouseY);	
  	colony = new Bacteria[1000];
  	for(int i = 0; i <colony.length; i++)
  	{
@@ -18,8 +16,6 @@
  		colony[i].show();
  		colony[i].move(); //move and show the bacteria   	
  	}
- 	cheese.show();
- 	cheese.move();
  }  
  class Bacteria    
  {  
@@ -33,8 +29,8 @@
 
  	void move()
  	{
- 		myX = myX + (int)(Math.random()*5)-2;
- 		myY = myY + (int)(Math.random()*5)-2;
+ 		myX = myX + (int)(Math.random()*11)-5;
+ 		myY = myY + (int)(Math.random()*11)-5;
  	}   
 
  	void show()
@@ -44,25 +40,3 @@
  		ellipse(myX, myY, 5, 5);
  	}
  }    
- class Food
- {
- 	int myX, myY;
- 	Food(int x, int y)
- 	{
- 		myX = x;
- 		myY = y;
- 	}
-
- 	void move()
- 	{
- 		myX = mouseX;
- 		myY = mouseY;
- 	}
-
- 	void show()
- 	{
- 		stroke(255,255);
- 		fill(255,255);
- 		rect(myX,myY,20,20);
- 	}
- }
